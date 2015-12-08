@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @got_character.name %>
+</p>
+
+<p>
+  <strong>Thumb url:</strong>
+  <%= @got_character.thumb_url %>
+</p>
+
+<p>
+  <strong>Full url:</strong>
+  <%= @got_character.full_url %>
+</p>
+
+<p>
+  <strong>House:</strong>
+  <%= @got_character.house_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @got_character.description %>
+</p>
+
+<%= link_to 'Edit', edit_got_character_path(@got_character) %> |
+<%= link_to 'Back', got_characters_path %>

@@ -1,0 +1,37 @@
+<%= form_for(@got_character) do |f| %>
+  <% if @got_character.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@got_character.errors.count, "error") %> prohibited this got_character from being saved:</h2>
+
+      <ul>
+      <% @got_character.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_area :name %>
+  </div>
+  <div class="field">
+    <%= f.label :thumb_url %><br>
+    <%= f.text_area :thumb_url %>
+  </div>
+  <div class="field">
+    <%= f.label :full_url %><br>
+    <%= f.text_area :full_url %>
+  </div>
+  <div class="field">
+    <%= f.label :house_id %><br>
+    <%= f.number_field :house_id %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Got Characters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Thumb url</th>
+      <th>Full url</th>
+      <th>House</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @got_characters.each do |got_character| %>
+      <tr>
+        <td><%= got_character.name %></td>
+        <td><%= got_character.thumb_url %></td>
+        <td><%= got_character.full_url %></td>
+        <td><%= got_character.house_id %></td>
+        <td><%= got_character.description %></td>
+        <td><%= link_to 'Show', got_character %></td>
+        <td><%= link_to 'Edit', edit_got_character_path(got_character) %></td>
+        <td><%= link_to 'Destroy', got_character, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Got character', new_got_character_path %>
