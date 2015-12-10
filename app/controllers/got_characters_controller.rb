@@ -4,7 +4,7 @@ class GotCharactersController < ApplicationController
   # GET /got_characters
   # GET /got_characters.json
   def index
-    @got_characters = GotCharacter.all
+    @got_characters = GotCharacter.paginate(:page => params[:page])
   end
 
   # GET /got_characters/1
@@ -62,13 +62,13 @@ class GotCharactersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_got_character
-      @got_character = GotCharacter.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_got_character
+    @got_character = GotCharacter.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def got_character_params
-      params.require(:got_character).permit(:name, :thumb_url, :full_url, :house_id, :description)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def got_character_params
+    params.require(:got_character).permit(:name, :thumb_url, :full_url, :house_id, :description)
+  end
 end
