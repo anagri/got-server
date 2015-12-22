@@ -69,6 +69,6 @@ class GotCharactersController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def got_character_params
-    params.require(:got_character).permit(:name, :thumb_url, :full_url, :house_id, :description)
+    params.require(:got_character).permit(:name, :alive, :thumb_url, :full_url, :house_id, :description)
   end
 end

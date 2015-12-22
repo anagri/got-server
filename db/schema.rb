@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208014913) do
+ActiveRecord::Schema.define(version: 20151222054655) do
 
   create_table "got_characters", force: :cascade do |t|
     t.text     "name"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20151208014913) do
     t.text     "full_url"
     t.integer  "house_id"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "alive",       default: 0
   end
 
 end
